@@ -1,9 +1,4 @@
-import type {
-  FiberScope,
-  FiberScopeRect,
-  FiberScopeSnapshot,
-  RenderEvent
-} from '@rohan0420/fiberscope-core';
+import type { FiberScope, FiberScopeRect, FiberScopeSnapshot, RenderEvent } from '../core';
 
 import { heatColor } from './color';
 
@@ -118,7 +113,10 @@ export class CanvasOverlay {
 
     this.regions.set(event.componentId, {
       rect: event.rect,
-      intensity: Math.min(1, (existing?.intensity ?? 0) + 0.2 + durationBoost * 0.35 + frequencyBoost * 0.2),
+      intensity: Math.min(
+        1,
+        (existing?.intensity ?? 0) + 0.2 + durationBoost * 0.35 + frequencyBoost * 0.2
+      ),
       lastSeen: performance.now(),
       label: event.componentName,
       renderCount: event.renderCount,
@@ -153,7 +151,12 @@ export class CanvasOverlay {
       this.context.fillRect(rect.x, rect.y, rect.width, rect.height);
       this.context.strokeStyle = `rgba(255, 255, 255, ${0.28 + intensity * 0.45})`;
       this.context.lineWidth = 1;
-      this.context.strokeRect(rect.x + 0.5, rect.y + 0.5, Math.max(0, rect.width - 1), Math.max(0, rect.height - 1));
+      this.context.strokeRect(
+        rect.x + 0.5,
+        rect.y + 0.5,
+        Math.max(0, rect.width - 1),
+        Math.max(0, rect.height - 1)
+      );
 
       if (rect.width > 72 && rect.height > 28) {
         this.drawLabel(region, intensity);
@@ -166,7 +169,8 @@ export class CanvasOverlay {
     const x = region.rect.x + 6;
     const y = region.rect.y + 17;
 
-    this.context.font = '12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    this.context.font =
+      '12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     const width = this.context.measureText(text).width + 10;
     this.context.fillStyle = `rgba(18, 24, 38, ${0.5 + intensity * 0.35})`;
     this.context.fillRect(region.rect.x + 4, region.rect.y + 4, width, 20);
@@ -181,7 +185,8 @@ export class CanvasOverlay {
     const padding = 10;
     const width = this.context.measureText(text).width + padding * 2;
 
-    this.context.font = '12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    this.context.font =
+      '12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     this.context.fillStyle = 'rgba(8, 13, 23, 0.72)';
     this.context.fillRect(12, 12, width, 30);
     this.context.fillStyle = fps < 45 ? '#ff8a80' : '#9be7c2';

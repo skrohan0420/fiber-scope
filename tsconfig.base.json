@@ -16,9 +16,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@rohan0420/fiberscope-core": ["packages/core/src/index.ts"],
-      "@rohan0420/fiberscope-react": ["packages/react/src/index.ts"],
-      "@rohan0420/fiberscope-overlay": ["packages/overlay/src/index.ts"]
+      "fiberscope": ["packages/fiberscope/src/index.ts"]
     }
   },
   "include": ["packages/*/src", "examples/*/src", "*.config.ts", "*.config.js"]

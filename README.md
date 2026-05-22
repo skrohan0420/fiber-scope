@@ -9,12 +9,9 @@ system. It is a browser-side developer tool for spatial render debugging.
 
 ## Packages
 
-- `@rohan0420/fiberscope-core` - strongly typed render metric store, event subscriptions, recent render history,
-  debug logging, and FPS monitoring.
-- `@rohan0420/fiberscope-react` - React hooks and Profiler helpers for lightweight component instrumentation.
-- `@rohan0420/fiberscope-overlay` - fixed fullscreen Canvas overlay that draws translucent heat regions and FPS
-  status from core snapshots.
-- `@rohan0420/fiberscope-react-demo` - Vite React app with deliberate rerenders, expensive work, and stress states.
+- `fiberscope` - the single publishable package. It includes core render metrics, React hooks,
+  React Profiler helpers, FPS monitoring, and the Canvas heatmap overlay.
+- `@fiberscope/react-demo` - Vite React app with deliberate rerenders, expensive work, and stress states.
 
 ## Quick Start
 
@@ -48,8 +45,7 @@ npm run lint
 Create a scope and mount the overlay:
 
 ```ts
-import { initFiberScope } from '@rohan0420/fiberscope-core';
-import { mountFiberScopeOverlay } from '@rohan0420/fiberscope-overlay';
+import { initFiberScope, mountFiberScopeOverlay } from 'fiberscope';
 
 const scope = initFiberScope({ debug: true });
 mountFiberScopeOverlay(scope);
@@ -58,7 +54,7 @@ mountFiberScopeOverlay(scope);
 Track a React component region:
 
 ```tsx
-import { useFiberTrack } from '@rohan0420/fiberscope-react';
+import { useFiberTrack } from 'fiberscope';
 
 export function SearchResults() {
   const ref = useFiberTrack<HTMLDivElement>('SearchResults');
@@ -70,7 +66,7 @@ export function SearchResults() {
 Use React's Profiler API for subtree duration tracking:
 
 ```tsx
-import { FiberProfiler } from '@rohan0420/fiberscope-react';
+import { FiberProfiler } from 'fiberscope';
 
 <FiberProfiler id="ResultsPane">
   <ResultsPane />
@@ -94,13 +90,11 @@ See [docs/architecture.md](docs/architecture.md) for the package data flow.
 This repository uses npm workspaces:
 
 ```text
-packages/core
-packages/react
-packages/overlay
+packages/fiberscope
 examples/react-demo
 ```
 
-Each library package builds with `tsup` to ESM, CommonJS, declaration files, and sourcemaps.
+The `fiberscope` package builds with `tsup` to ESM, CommonJS, declaration files, and sourcemaps.
 
 ## Development Commands
 

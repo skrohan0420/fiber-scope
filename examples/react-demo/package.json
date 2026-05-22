@@ -1,5 +1,5 @@
 {
-  "name": "@rohan0420/fiberscope-react-demo",
+  "name": "@fiberscope/react-demo",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -9,9 +9,7 @@
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
-    "@rohan0420/fiberscope-core": "0.1.0",
-    "@rohan0420/fiberscope-overlay": "0.1.0",
-    "@rohan0420/fiberscope-react": "0.1.0",
+    "fiberscope": "0.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

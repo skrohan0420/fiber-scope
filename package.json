@@ -5,13 +5,13 @@
   "description": "Visual React performance heatmap and render debugging toolkit",
   "type": "module",
   "workspaces": [
-    "packages/*",
+    "packages/fiberscope",
     "examples/*"
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "clean": "npm run clean --workspaces --if-present",
-    "dev": "npm run dev --workspace @rohan0420/fiberscope-react-demo",
+    "dev": "npm run dev --workspace @fiberscope/react-demo",
     "lint": "eslint .",
     "test": "vitest run",
     "format": "prettier --write .",

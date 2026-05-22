@@ -1,10 +1,10 @@
 # FiberScope Architecture
 
-FiberScope is split into three small packages:
+FiberScope is published as one package with three internal modules:
 
-- `@rohan0420/fiberscope-core` owns render metrics, subscriptions, recent render events, and FPS sampling.
-- `@rohan0420/fiberscope-react` provides hooks and React Profiler wrappers that report commits to the core.
-- `@rohan0420/fiberscope-overlay` renders a browser-only Canvas overlay from core snapshots.
+- core owns render metrics, subscriptions, recent render events, and FPS sampling.
+- react provides hooks and React Profiler wrappers that report commits to the core.
+- overlay renders a browser-only Canvas overlay from core snapshots.
 
 The packages communicate through a simple in-process subscription model. No events leave the browser,
 and no backend, upload, replay, or analytics infrastructure is included.

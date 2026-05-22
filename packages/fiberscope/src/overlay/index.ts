@@ -1,7 +1,7 @@
 export { CanvasOverlay } from './CanvasOverlay';
 export type { CanvasOverlayOptions } from './CanvasOverlay';
 
-import type { FiberScope } from '@rohan0420/fiberscope-core';
+import type { FiberScope } from '../core';
 
 import { CanvasOverlay, type CanvasOverlayOptions } from './CanvasOverlay';
 

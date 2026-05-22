@@ -1,8 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { initFiberScope } from '@rohan0420/fiberscope-core';
-import { mountFiberScopeOverlay } from '@rohan0420/fiberscope-overlay';
-import { setFiberScope } from '@rohan0420/fiberscope-react';
+import { initFiberScope, mountFiberScopeOverlay, setFiberScope } from 'fiberscope';
 
 import { App } from './App';
 import './styles.css';

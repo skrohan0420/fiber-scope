@@ -1,6 +1,5 @@
 import { memo, useEffect, useMemo, useState } from 'react';
-import type { FiberScope } from '@rohan0420/fiberscope-core';
-import { FiberProfiler, useFiberTrack } from '@rohan0420/fiberscope-react';
+import { FiberProfiler, useFiberTrack, type FiberScope } from 'fiberscope';
 
 interface AppProps {
   scope: FiberScope;
