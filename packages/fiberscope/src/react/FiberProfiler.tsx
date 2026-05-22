@@ -1,5 +1,5 @@
 import { Profiler, type ProfilerOnRenderCallback, type ReactNode } from 'react';
-import type { FiberScope } from '@rohan0420/fiberscope-core';
+import type { FiberScope } from '../core';
 
 import { getFiberScope } from './scope';
 

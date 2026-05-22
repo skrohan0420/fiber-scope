@@ -1,7 +1,7 @@
 {
-  "name": "@rohan0420/fiberscope-react",
+  "name": "fiberscope",
   "version": "0.1.0",
-  "description": "React instrumentation helpers for FiberScope.",
+  "description": "Visual React performance heatmap and render debugging toolkit.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,14 +13,11 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "sideEffects": false,
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --external react",
     "clean": "rimraf dist"
-  },
-  "dependencies": {
-    "@rohan0420/fiberscope-core": "0.1.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0"

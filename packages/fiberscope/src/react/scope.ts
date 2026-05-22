@@ -1,8 +1,4 @@
-import {
-  initFiberScope,
-  type FiberScope,
-  type FiberScopeOptions
-} from '@rohan0420/fiberscope-core';
+import { initFiberScope, type FiberScope, type FiberScopeOptions } from '../core';
 
 let globalScope: FiberScope | undefined;
 

@@ -6,15 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@rohan0420/fiberscope-core': fileURLToPath(
-        new URL('../../packages/core/src/index.ts', import.meta.url)
-      ),
-      '@rohan0420/fiberscope-overlay': fileURLToPath(
-        new URL('../../packages/overlay/src/index.ts', import.meta.url)
-      ),
-      '@rohan0420/fiberscope-react': fileURLToPath(
-        new URL('../../packages/react/src/index.ts', import.meta.url)
-      )
+      fiberscope: fileURLToPath(new URL('../../packages/fiberscope/src/index.ts', import.meta.url))
     }
   },
   server: {
@@ -22,10 +14,6 @@ export default defineConfig({
     port: 5173
   },
   optimizeDeps: {
-    include: [
-      '@rohan0420/fiberscope-core',
-      '@rohan0420/fiberscope-overlay',
-      '@rohan0420/fiberscope-react'
-    ]
+    include: ['fiberscope']
   }
 });

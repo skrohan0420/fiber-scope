@@ -1,5 +1,5 @@
 import { useId, useLayoutEffect, useRef, type RefObject } from 'react';
-import type { FiberScope, FiberScopeRect } from '@rohan0420/fiberscope-core';
+import type { FiberScope, FiberScopeRect } from '../core';
 
 import { getFiberScope } from './scope';
 
