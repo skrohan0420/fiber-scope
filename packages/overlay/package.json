@@ -1,0 +1,28 @@
+{
+  "name": "@rohan0420/fiberscope-overlay",
+  "version": "0.1.0",
+  "description": "Canvas heatmap overlay renderer for FiberScope.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@rohan0420/fiberscope-core": "0.1.0"
+  },
+  "devDependencies": {
+    "rimraf": "^6.1.2"
+  }
+}
